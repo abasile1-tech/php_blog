@@ -21,20 +21,22 @@
 <!DOCTYPE html>
 <html>
 	<div>
-	<head>
-		<title>PHP Blog</title>
-		<link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/cerulean/bootstrap.min.css">
-	</head>
-	<body>
-	<h1>Posts</h1>
-	<?php foreach($posts as $post) : ?>
-		<div class="well">
-				<h3><?php echo $post['title']; ?></h3>
-				<small>Created on <?php echo $post['created_at']; ?> by
-				<?php echo $post['author']; ?></small>
-				<p><?php echo $post['body']; ?></p>
-		</div>
-		<?php endforeach; ?>
-	</body>
+		<head>
+			<title>PHP Blog</title>
+			<link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/cerulean/bootstrap.min.css">
+		</head>
+		<body>
+			<div class="container">
+				<h1>Posts</h1>
+				<?php foreach($posts as $post) : ?>
+					<div class="well">
+							<h3><?php echo $post['title']; ?></h3>
+							<small>Created on <?php echo $post['created_at']; ?> by
+							<?php echo $post['author']; ?></small>
+							<p><?php echo $post['body']; ?></p>
+					</div>
+					<?php endforeach; ?>
+			</div>
+		</body>
 	</div>
 </html>
