@@ -3,7 +3,7 @@
 	require('config/db.php');
 
 	// Create Query
-	$query = 'SELECT * FROM posts';
+	$query = 'SELECT * FROM posts ORDER BY created_at DESC';
 
 	// Get Result
 	$result = mysqli_query($conn, $query);
@@ -33,6 +33,7 @@
 					?>post.php?id=<?php echo $post['id']; ?>">Read More</a>
 			</div>
 			</div>
+			<br>
 			<?php endforeach; ?>
 	</div>
 <?php include('inc/footer.php'); ?>

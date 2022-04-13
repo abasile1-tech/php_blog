@@ -24,10 +24,11 @@
 
 <?php include('inc/header.php'); ?>
 	<div class="container">
-		<a href="<?php echo ROOT_URL; ?>" class='btn btn-primary'>Back</a>
 		<h1><?php echo $post['title']; ?></h1>
 		<small>Created on <?php echo $post['created_at']; ?> by
 		<?php echo $post['author']; ?></small>
 		<p><?php echo $post['body']; ?></p>
+		<hr>
+		<a href="<?php echo ROOT_URL; ?>editpost.php?id=<?php echo $post['id']; ?>" class="btn btn-primary">Edit</a>
 	</div>
 <?php include('inc/footer.php'); ?>
