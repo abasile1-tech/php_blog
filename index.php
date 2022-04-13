@@ -1,4 +1,5 @@
 <?php
+	require('config/config.php');
 	require('config/db.php');
 
 	// Create Query
@@ -18,25 +19,20 @@
 	mysqli_close($conn);
 ?>
 
-<!DOCTYPE html>
-<html>
-	<div>
-		<head>
-			<title>PHP Blog</title>
-			<link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/cerulean/bootstrap.min.css">
-		</head>
-		<body>
-			<div class="container">
-				<h1>Posts</h1>
-				<?php foreach($posts as $post) : ?>
-					<div class="well">
-							<h3><?php echo $post['title']; ?></h3>
-							<small>Created on <?php echo $post['created_at']; ?> by
-							<?php echo $post['author']; ?></small>
-							<p><?php echo $post['body']; ?></p>
-					</div>
-					<?php endforeach; ?>
+<?php include('inc/header.php'); ?>
+	<div class="container">
+		<h1>Posts</h1>
+		<?php foreach($posts as $post) : ?>
+			<div class="card primary-card">
+			<div class="card-body">
+				<h3><?php echo $post['title']; ?></h3>
+				<small>Created on <?php echo $post['created_at']; ?> by
+				<?php echo $post['author']; ?></small>
+				<p><?php echo $post['body']; ?></p>
+				<a class="btn btn-primary" href="<?php echo ROOT_URL;
+					?>post.php?id=<?php echo $post['id']; ?>">Read More</a>
 			</div>
-		</body>
+			</div>
+			<?php endforeach; ?>
 	</div>
-</html>
+<?php include('inc/footer.php'); ?>
