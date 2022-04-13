@@ -33,6 +33,7 @@
 					?>post.php?id=<?php echo $post['id']; ?>">Read More</a>
 			</div>
 			</div>
+			<br>
 			<?php endforeach; ?>
 	</div>
 <?php include('inc/footer.php'); ?>
